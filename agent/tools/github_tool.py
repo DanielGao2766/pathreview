@@ -135,3 +135,18 @@ class GitHubTool(BaseTool):
             return response.status_code == 200
         except Exception:
             return False
+        
+    # Missing feature that I am implementing
+    def _longest_contribution_streak(self, username: str) -> int:
+        """
+            Check the longest contribution streak of a individual's github account
+            
+            Args:
+                username: Github Username
+                
+            Returns:
+                int value corresponding to the longest contribution streak of the user
+                0 if username does not exist or nothing has been committed
+        """
+        
+      
