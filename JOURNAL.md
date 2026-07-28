@@ -4,7 +4,7 @@
 
 **Issue title:** Add a contribution_streak field to the GitHub analysis (longest consecutive days of commits)
  
-**Tier:**  Tier 2
+**Tier:** Tier 2
 
 **Problem summary:**
 The current GitHub analysis reports information about a user's GitHub activity, but it does not measure contribution consistency over time. Because this metric is absent, users cannot easily demonstrate one aspect of sustained engagement with open-source projects. Consistent contribution activity is often viewed as a positive portfolio signal, so the analysis is missing information that could better represent a developer's coding habits.
@@ -18,3 +18,17 @@ I selected this issue because it is a well-scoped feature with a clear objective
 **Setup confirmation:** App runs locally at localhost:5173
 
 **Cohort ledger:** Issue added to cohort ledger
+
+## Week 8 — Reproduction & solution planning
+
+**Reproduction commit link:** [link to commit documenting the reproduced issue]
+
+**Reproduction summary:**
+[1–2 sentences: How did you reproduce the issue? What did you observe?]
+
+**PLAN.md link:** [link to PLAN.md in your fork]
+
+**Walkthrough video (recommended):** [link to your Loom video, ≤2 min — recommended, not graded]
+
+**Blockers or open questions:**
+[Anything you're still uncertain about going into Week 9, or leave blank]
