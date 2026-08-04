@@ -35,28 +35,30 @@ I located the gap in the feature within the agent/tools folder where I found git
 ### Check-in 1 (mid-week)
 
 **Current progress:**
-[What have you implemented so far? Which sub-tasks from PLAN.md are done?]
+Implemented `_longest_contribution_streak` in `agent/tools/github_tool.py` (replacing the stub from Week 8) and wired it into `_fetch_repo_metadata` as a new `contribution_streak` field. Switched the data source from the originally planned single-repo REST commits endpoint to GitHub's GraphQL `contributionsCollection` API, since account-wide streak (not repo-scoped) is the intended semantics per the issue. Added `tests/unit/test_github_tool.py` covering all edge cases from PLAN.md (no token, zero contributions, single day, unbroken streak, gap in the middle, same-day duplicate commits, nonexistent user, request failures, and integration into `_fetch_repo_metadata`).
 
 **Next steps:**
-[What are you working on for the rest of the week?]
+Run `make check` and `make test-unit`, confirm no new failures vs. baseline, then open the PR and request review.
 
 **Blockers:**
-[Anything slowing you down? Or leave blank.]
+None.
+
 
 ---
 
 ### Check-in 2 (end of week)
 
-**PR link:** [link to your submitted pull request]
+**PR link:** (https://github.com/ascherj/pathreview/pull/839)
 
-**Branch:** [the branch name you worked on, e.g. `fix/123-short-description`]
+**Branch:** feat/52-contribution-streak-tool
 
 **What you built:**
-[1–3 sentences summarizing what your fix does and how it works]
+Added a `contribution_streak` field to GitHub analysis output that reports the longest run of consecutive days with GitHub activity for a user's account, computed via GitHub's GraphQL `contributionsCollection` API. The field is now included in the dict returned by `GitHubTool.execute()` alongside existing repo metadata.
 
 **Tests added or updated:**
-[Which test files did you touch? What do they cover?]
+Added `tests/unit/test_github_tool.py` (new file, 9 tests). Covers: no API token (bails out without a request), zero contributions, a single contribution day, an unbroken streak, a streak with a gap in the middle (verifies longest-run logic, not total days or most-recent run), multiple contributions on the same day collapsing to one day, a nonexistent user, an exception during the request, and that the field is correctly wired into `_fetch_repo_metadata`'s output.
 
-**Self-review confirmation:** [ ] make check passes  [ ] make test-unit passes
+**Self-review confirmation:** [x] make check passes  [x] make test-unit passes
 
-**Draft PR feedback received from:** [name or Slack handle, or "none"]
+**Draft PR feedback received from:** 
+None
