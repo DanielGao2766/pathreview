@@ -43,7 +43,6 @@ Run `make check` and `make test-unit`, confirm no new failures vs. baseline, the
 **Blockers:**
 None.
 
-
 ---
 
 ### Check-in 2 (end of week)
@@ -62,3 +61,42 @@ Added `tests/unit/test_github_tool.py` (new file, 9 tests). Covers: no API token
 
 **Draft PR feedback received from:** 
 None
+
+## Week 10 — Iteration & reflection
+
+### Reviewer feedback
+
+**Feedback received:** [ ] Yes  [x] No — still awaiting review
+
+**Summary of feedback:**
+[What did reviewers comment on? Or note that no review came in.]
+
+**How you responded:**
+[What changes did you make, or what did you reply? If no feedback,
+leave blank.]
+
+---
+
+### Reflection
+
+**What was harder than you expected?**
+[Be specific — what part of the process, codebase, or workflow
+surprised you?]
+The timeline of spending two weeks planning and then one week executing made me think that the workflow would be smooth since I already documented my decision choices in my PLAN.md, but some errors within my test file (test_github_tool.py) for isolated error cases that I thought of made me spend more time that I thought I would need on fixing the feature and left me with less time that I would have liked to create the test suite for the feature (longest_contribution_streak on GitHub)
+
+**What did you learn about working in a large codebase?**
+Something that was difficult that I had to learn while working in a large codebase was that I didn't know everything while making my own code, whereas for my own project I would know everything. This meant that when I ran the test suite through 'make check' and 'make test unit' within the test folder, some of the errors that didn't pass weren't part of my issue and I wasn't able to fix which is not typical my own self projects where every test has to pass and everything has to be green .
+
+**How did AI tools help — and where did they fall short?**
+[Where was AI assistance most useful this module? Where did you need
+to go beyond what AI could give you?]
+AI tools were most useful at the beginning by helping me figure out the codebase by helping me figure out what a specific method is supposed to do as an example and helping to review my PLAN.md whether to follow the GitHub API call that was already preexisting that would only pull stats from the repo I was contributing on or making a new request to pull from each individual's own GitHub profile for the last calendar year (365 days)
+
+**What would you do differently if you started over?**
+[Issue selection, planning, implementation, or process — anything
+you'd change?]
+I would create the test suite earlier so that the timeline would be better at the end of the project since after making my feature work in agent/tool/github_tool.py I still had to make tests since I was working on a new feature, and I didn't account for how long the test suite would take in both designing and fixing my code if the test failed in test_github_tool.py with tests like _calendar_response and _test_same_day_multiple_contributions_count_once. 
+
+**What are you most proud of from this module?**
+[One thing — it doesn't have to be the PR itself.]
+I'm proud of developing my skills in being able to read and edit a large codebase, while being able to use AI effectively to help me finish my feature in a more efficient manner such as when it became a second set of eyes on my PLAN.md and helped come up with some potential errors within the code in github_tool.py so that I could put the tests in test_github_tool.py as unit tests for specific things that might cause errors such as having the GitHub user not be real that ended up with the test of test_nonexistent_user_returns_zero.
